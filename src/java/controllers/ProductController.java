@@ -4,7 +4,8 @@
  */
 package controllers;
 
-import jakarta.servlet.RequestDispatcher;
+import entities.Brand;
+import entities.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -12,14 +13,16 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+import java.util.Vector;
+import models.DAOBrand;
+import models.DAOProduct;
 
 /**
  *
  * @author HP
  */
-@WebServlet(name = "LogoutController", urlPatterns = {"/LogoutController"})
-public class LogoutController extends HttpServlet {
+@WebServlet(name = "ProductController", urlPatterns = {"/ProductController"})
+public class ProductController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,10 +41,10 @@ public class LogoutController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LogoutController</title>");
+            out.println("<title>Servlet ProductController</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet LogoutController at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet ProductController at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -59,14 +62,33 @@ public class LogoutController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Lấy đối tượng session
-        HttpSession session = request.getSession(false);
-
-        if (session != null) {
-            session.invalidate();
+        DAOProduct dao = new DAOProduct();
+        DAOBrand daoBrand = new DAOBrand();
+        //  int page = Integer.parseInt(request.getParameter("page") == null ? "1" : request.getParameter("page"));
+        int page = 1;
+        String pageStr = request.getParameter("page");
+        if (pageStr != null && !pageStr.isEmpty()) {
+            try {
+                page = Integer.parseInt(pageStr);
+            } catch (NumberFormatException e) {
+                page = 1;
+            }
         }
-        RequestDispatcher rd = request.getRequestDispatcher("HomePageController");
-        rd.forward(request, response);
+        int itemsPerPage = 9;
+        Vector<Product> productList = dao.getProductsWithPaginationAndSorting(page, itemsPerPage);
+        Vector<Brand> brandList = daoBrand.getAllBrands();
+        int totalProducts = dao.getTotalProducts();
+        int totalPages = (int) Math.ceil((double) totalProducts / itemsPerPage);
+
+        request.setAttribute("productList", productList);
+        request.setAttribute("currentPage", page);
+        request.setAttribute("brands", brandList);
+        request.setAttribute("totalPages", totalPages);
+
+        Vector<Product> latestProducts = dao.getProductsWithPaginationAndSorting(1, 5); // 
+        request.setAttribute("latestProducts", latestProducts);
+
+        request.getRequestDispatcher("WEB-INF/views/shop.jsp").forward(request, response);
     }
 
     /**
