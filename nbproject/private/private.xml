@@ -3,17 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Project_SWP391/src/java/controllers/LogoutController.java</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Project_SWP391/src/java/controllers/CartController.java</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Project_SWP391/src/java/helper/Validate.java</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Project_SWP391/web/WEB-INF/views/index.jsp</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Project_SWP391/web/WEB-INF/views/login.jsp</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Project_SWP391/src/java/controllers/LoginController.java</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Project_SWP391/src/java/models/DAOUser.java</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Project_SWP391/src/java/entities/User.java</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Project_SWP391/src/java/controllers/RegisterController.java</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Project_SWP391/src/java/controllers/HomeForward.java</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Project_SWP391/src/java/helper/Authorize.java</file>
+            <file>file:/E:/Documents/NetBeansProjects/Project_SWP391/src/java/controllers/LogoutController.java</file>
+            <file>file:/E:/Documents/NetBeansProjects/Project_SWP391/src/java/controllers/HomePageController.java</file>
         </group>
     </open-files>
 </project-private>

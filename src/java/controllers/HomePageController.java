@@ -112,7 +112,7 @@ public class HomePageController extends HttpServlet {
             RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/views/404.jsp");
             rd.forward(request, response);
         }
-    } 
+    }
 
     /** 
      * Handles the HTTP <code>POST</code> method.

@@ -90,7 +90,7 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="logo pull-left">
-                                <a href="index.html"><img src="images/home/logo.png" alt="" /></a>
+                                <a href="HomePageController"><img src="images/home/logo.png" alt="" /></a>
                             </div>
                             <div class="btn-group pull-right">
                                 <div class="btn-group">
@@ -157,7 +157,7 @@
                                     <li><a href="HomePageController">Home</a></li>
                                     <li class="dropdown"><a href="#" class="active">Shop<i class="fa fa-angle-down"></i></a>
                                         <ul role="menu" class="sub-menu">
-                                            <li><a href="shop.html" class="active">Products</a></li>
+                                            <li><a href="ProductController" class="active">Products</a></li>
                                             <li><a href="checkout.html">Checkout</a></li> 
                                             <li><a href="cart.html">Cart</a></li> 
                                             <li><a href="login.html">Login</a></li> 
