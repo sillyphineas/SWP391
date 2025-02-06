@@ -3,14 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/SWP%20SP25/SWP391_Project/src/java/models/DAOVoucher.java</file>
-            <file>file:/C:/SWP%20SP25/SWP391_Project/src/java/models/DAOPayment.java</file>
-            <file>file:/C:/SWP%20SP25/SWP391_Project/src/java/models/DAOShipping.java</file>
-            <file>file:/C:/SWP%20SP25/SWP391_Project/src/java/entities/Shipping.java</file>
-            <file>file:/C:/SWP%20SP25/SWP391_Project/src/java/entities/Payment.java</file>
-            <file>file:/C:/SWP%20SP25/SWP391_Project/src/java/models/DBConnection.java</file>
-            <file>file:/C:/SWP%20SP25/SWP391_Project/src/java/models/DAOUser.java</file>
-            <file>file:/C:/SWP%20SP25/SWP391_Project/src/java/entities/Voucher.java</file>
+            <file>file:/E:/Documents/NetBeansProjects/Project_SWP391/src/java/controllers/LogoutController.java</file>
+            <file>file:/E:/Documents/NetBeansProjects/Project_SWP391/src/java/controllers/HomePageController.java</file>
         </group>
     </open-files>
 </project-private>

@@ -13,13 +13,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Home | E-Shopper</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/prettyPhoto.css" rel="stylesheet">
-    <link href="css/price-range.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
-	<link href="css/main.css" rel="stylesheet">
-	<link href="css/responsive.css" rel="stylesheet">
+    <link href="/Project_SWP391/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Project_SWP391/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/Project_SWP391/css/prettyPhoto.css" rel="stylesheet">
+    <link href="/Project_SWP391/css/price-range.css" rel="stylesheet">
+    <link href="/Project_SWP391/css/animate.css" rel="stylesheet">
+	<link href="/Project_SWP391/css/main.css" rel="stylesheet">
+	<link href="/Project_SWP391/css/responsive.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -40,7 +40,7 @@
 			<img src="images/404/404.png" class="img-responsive" alt="" />
 			<h1><b>OPPS!</b> We Couldn?t Find this Page</h1>
 			<p>Uh... So it looks like you brock something. The page you are looking for has up and Vanished.</p>
-			<h2><a href="index.html">Bring me back Home</a></h2>
+			<h2><a href="HomePageController">Bring me back Home</a></h2>
 		</div>
 	</div>
 

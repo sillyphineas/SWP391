@@ -17,22 +17,14 @@ public class DAOUser extends DBConnection {
 
     public int addUser(User user) {
         int n = 0;
-        String sql = "INSERT INTO Users (name, email, passHash, gender, phoneNumber, resetToken, resetTokenExpired, Address, DateOfBirth, roleId, isDisabled) "
-                   + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO Users (email, passHash, roleId, isDisabled)\n" +
+                "VALUES (?, ?, ?, ?)";
         try {
             PreparedStatement pre = conn.prepareStatement(sql);
-            pre.setString(1, user.getName());
-            pre.setString(2, user.getEmail());
-            pre.setString(3, user.getPassHash());
-            pre.setBoolean(4, user.isGender());
-            pre.setString(5, user.getPhoneNumber());
-            pre.setString(6, user.getResetToken());
-            pre.setDate(7, user.getResetTokenExpired());
-            pre.setString(8, user.getAddress());
-            pre.setDate(9, user.getDateOfBirth());
-            pre.setInt(10, user.getRoleId());
-            pre.setBoolean(11, user.isDisabled());
-            
+            pre.setString(1, user.getEmail());
+            pre.setString(2, user.getPassHash());
+            pre.setInt(3, user.getRoleId());
+            pre.setBoolean(4, user.isDisabled());
             n = pre.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -74,6 +66,35 @@ public class DAOUser extends DBConnection {
         try {
             PreparedStatement pre = conn.prepareStatement(sql);
             pre.setInt(1, id);
+            ResultSet rs = pre.executeQuery();
+            if (rs.next()) {
+                user = new User(
+                    rs.getInt("id"),
+                    rs.getString("name"),
+                    rs.getString("email"),
+                    rs.getString("passHash"),
+                    rs.getBoolean("gender"),
+                    rs.getString("phoneNumber"),
+                    rs.getString("resetToken"),
+                    rs.getDate("resetTokenExpired"),
+                    rs.getString("Address"),
+                    rs.getDate("DateOfBirth"),
+                    rs.getInt("roleId"),
+                    rs.getBoolean("isDisabled")
+                );
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DAOUser.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return user;
+    }
+    
+    public User getUserByEmail(String email) {
+        String sql = "SELECT * FROM Users WHERE email = ?";
+        User user = null;
+        try {
+            PreparedStatement pre = conn.prepareStatement(sql);
+            pre.setString(1, email);
             ResultSet rs = pre.executeQuery();
             if (rs.next()) {
                 user = new User(
